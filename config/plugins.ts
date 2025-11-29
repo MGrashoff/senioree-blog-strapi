@@ -7,8 +7,10 @@ export default ({ env }) => {
                     baseUrl: env("AWS_S3_BASE_URL"),
                     rootPath: env("AWS_S3_ROOT_PATH"),
                     s3Options: {
-                        accessKeyId: env('AWS_ACCESS_KEY_ID'),
-                        secretAccessKey: env("AWS_ACCESS_SECRET"),
+                        credentials: {
+                            accessKeyId: env("AWS_ACCESS_KEY_ID"),
+                            secretAccessKey: env("AWS_ACCESS_SECRET"),
+                        },
                         region: env("AWS_REGION", "eu-central-1"),
                         params: {
                             ACL: env("AWS_ACL", "public-read"),
