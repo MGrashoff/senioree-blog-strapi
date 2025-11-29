@@ -1,7 +1,33 @@
 export default [
   'strapi::logger',
   'strapi::errors',
-  'strapi::security',
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self'", 'https:'],
+
+          'img-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'd326cx1ypsgdku.cloudfront.net',
+          ],
+
+          'media-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'd326cx1ypsgdku.cloudfront.net',
+          ],
+
+          upgradeInsecureRequests: null,
+        },
+      },
+    },
+  },
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::query',
