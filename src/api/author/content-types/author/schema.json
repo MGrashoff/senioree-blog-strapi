@@ -28,6 +28,15 @@
     "email": {
       "type": "string"
     },
+    "slug": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "introduction": {
+      "type": "richtext"
+    },
     "articles": {
       "type": "relation",
       "relation": "oneToMany",
